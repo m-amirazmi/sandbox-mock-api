@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { ocrender } = require("../mock/ocrender");
 const app = express();
 
 app.use(cors());
@@ -97,6 +98,10 @@ app.post("/api/banks", (req, res) => {
 
 app.get("/api/banks", (req, res) => {
   return res.json(list);
+});
+
+app.get("/api/ocrender", (req, res) => {
+  return res.json(ocrender);
 });
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
