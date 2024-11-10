@@ -104,6 +104,10 @@ app.get("/api/ocrender", (req, res) => {
   return res.json(ocrender);
 });
 
+app.get("/api/visible", (req, res) => {
+  return res.json({ title: "visible" });
+});
+
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.listen(9123, () => console.log("Server ready on port 9123."));
