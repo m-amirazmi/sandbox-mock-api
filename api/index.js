@@ -107,7 +107,9 @@ app.get("/api/ocrender", (req, res) => {
 app.get("/api/visible", (req, res) => {
   const query = req.query;
 
-  return res.json({ title: "visible", query });
+  if (query["plateNumber"] === "ABC123")
+    return res.status(200).json({ title: "visible" });
+  return res.status(404).json({ title: "PN Not found" });
 });
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
