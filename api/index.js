@@ -106,9 +106,8 @@ app.get("/api/ocrender", (req, res) => {
 
 app.get("/api/visible", (req, res) => {
   const query = req.query;
-  console.log({ query });
 
-  return res.json({ title: "visible" });
+  return res.json({ title: "visible", query });
 });
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
