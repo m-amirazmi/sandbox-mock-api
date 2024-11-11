@@ -105,6 +105,9 @@ app.get("/api/ocrender", (req, res) => {
 });
 
 app.get("/api/visible", (req, res) => {
+  const query = req.query;
+  console.log({ query });
+
   return res.json({ title: "visible" });
 });
 
