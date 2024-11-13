@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const { ocrender } = require("../mock/ocrender");
-const { oc } = require("../mock/oc");
+const ocrender = require("../mock/ocrender");
+const oc = require("../mock/oc");
 const app = express();
 
 app.use(cors());
@@ -102,8 +102,11 @@ app.get("/api/banks", (req, res) => {
 });
 
 app.get("/api/oc", (req, res) => {
-  const { pa } = req.params;
+  const { pa } = req.query;
   const ocObj = oc;
+
+  console.log("SINI JE", req);
+
   if (pa === "true") ocObj["value"]["isEligiblePersonalAccident"] = true;
   else ocObj["value"]["isEligiblePersonalAccident"] = false;
   res.json(ocObj);

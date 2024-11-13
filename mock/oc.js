@@ -1,4 +1,4 @@
-export const oc = {
+module.exports = {
   quotationNo: "MI044757",
   planPremium: 1069.96,
   addOnPremium: 0,

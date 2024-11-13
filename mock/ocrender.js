@@ -1,4 +1,4 @@
-export const ocrender = [
+module.exports = [
   {
     addOnId: 7,
     code: "B089",
