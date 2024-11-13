@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { ocrender } = require("../mock/ocrender");
+const { oc } = require("../mock/oc");
 const app = express();
 
 app.use(cors());
@@ -98,6 +99,14 @@ app.post("/api/banks", (req, res) => {
 
 app.get("/api/banks", (req, res) => {
   return res.json(list);
+});
+
+app.get("/api/oc", (req, res) => {
+  const { pa } = req.params;
+  const ocObj = oc;
+  if (pa === "true") ocObj["value"]["isEligiblePersonalAccident"] = true;
+  else ocObj["value"]["isEligiblePersonalAccident"] = false;
+  res.json(ocObj);
 });
 
 app.get("/api/ocrender", (req, res) => {
