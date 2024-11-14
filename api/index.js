@@ -123,6 +123,12 @@ app.get("/api/visible", (req, res) => {
   else return res.status(200).json({ visible: false });
 });
 
+app.get("/api/postcode", (req, res) => {
+  const { no } = req.query;
+  if (no === "53300") return res.status(200).json({ status: true });
+  return res.status(404).json({ status: false, message: "NotFound" });
+});
+
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.listen(9123, () => console.log("Server ready on port 9123."));
