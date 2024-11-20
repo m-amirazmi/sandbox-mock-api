@@ -119,7 +119,9 @@ app.get("/api/ocrender", (req, res) => {
 app.get("/api/visible", (req, res) => {
   const query = req.query;
   if (query["plateNumber"] === "ABC123")
-    return res.status(200).json({ visible: true });
+    return res.status(200).json({ visible: true, ncdPercentage: "25.0" });
+  if (query["plateNumber"] === "DEF456")
+    return res.status(200).json({ visible: true, ncdPercentage: "0" });
   else return res.status(200).json({ visible: false });
 });
 
