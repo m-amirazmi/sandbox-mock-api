@@ -5,6 +5,7 @@ const oc = require("../mock/oc");
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const list = [
   {
@@ -105,11 +106,14 @@ app.get("/api/oc", (req, res) => {
   const { pa } = req.query;
   const ocObj = oc;
 
-  console.log("SINI JE", req);
-
   if (pa === "true") ocObj["value"]["isEligiblePersonalAccident"] = true;
   else ocObj["value"]["isEligiblePersonalAccident"] = false;
   res.json(ocObj);
+});
+
+app.post("/api/oc", (req, res) => {
+  const addon = req.body.addon;
+  return res.json(addon);
 });
 
 app.get("/api/ocrender", (req, res) => {
