@@ -135,6 +135,12 @@ app.get("/api/postcode", (req, res) => {
   return res.status(404).json({ status: false, message: "NotFound" });
 });
 
+app.get("/api/stp", (req, res) => {
+  const { ic } = req.query;
+  if (ic === "123456-11-1234") return res.status(200).json({ status: true });
+  return res.status(200).json({ status: false });
+});
+
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.listen(9123, () => console.log("Server ready on port 9123."));
