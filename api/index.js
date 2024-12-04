@@ -7,6 +7,63 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.post("/api/life/servicing/alteration/entry", (req, res) => {
+  console.log("REQUEST =>", req.body);
+
+  return res.status(200).json({
+    status: "SUCCESS",
+    req: req.body,
+    data: [
+      {
+        alterationType: 24,
+        policy: {
+          policyNo: "BA9000001407",
+          policyCommencementDate: "2024-09-13T00:00:00.000+08:00",
+          policyStatus: 1,
+          paymentMode: 12,
+        },
+        alteration: {
+          alterationEntryDate: "2024-12-04T00:00:00.000+08:00",
+          alterationRequestDate: "2024-12-04T00:00:00.000+08:00",
+          alterationEffectiveDate: "2024-12-04T00:00:00.000+08:00",
+          alterationSettlementDate: "2024-12-04T00:00:00.000+08:00",
+          alterationHQReceiveDate: "2024-12-04T00:00:00.000+08:00",
+          alterationBranchRecordDate: "2024-12-04T00:00:00.000+08:00",
+          alterationStatus: "1",
+          alterationSourceSystem: null,
+          alterationSerialNo: null,
+          alterationKIVTransactionNo: 0,
+          currency: "RM",
+          lifeAssuredTitle: "MRS",
+          lifeAssuredName: "SLV NBUW",
+          companyBranchCode: "BR033",
+        },
+        paymentSourceDetails: {
+          clientType: 3,
+          accountName: "SLV NBUW",
+          bankCode: "MBB",
+          bankName: "MALAYAN BANKING BERHAD",
+          creditCardType: "MASTER",
+          creditCardSubType: "5",
+          creditCardExpired: "12/2028",
+          paymentSourceCode: 2,
+          creditCardNo: "5421247281321072",
+        },
+        documentList: [
+          {
+            documentDesc: "Request for Change Form/Written Notification.",
+            isMandatory: 1,
+            documentCode: "PSOD66",
+          },
+        ],
+        applicationNo: "BA90000014075/22012021/001",
+      },
+    ],
+    traceId: "b754121b-cf64-4d8f-b928-dd219a96ed64",
+    timestamp: "2024-12-04T12:14:04.092+08:00",
+  });
+});
+
 const list = [
   {
     id: 26,
