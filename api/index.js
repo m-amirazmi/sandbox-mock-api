@@ -7,8 +7,170 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.post("/api/life/policies/client-detail", (req, res) => {
+  console.log("REQUEST => /api/life/policies/client-detail", req.body);
+
+  if (!req.body.appId || !req.body.client.idNo)
+    return res.status(200).json({ status: "FAILED", message: "Not found" });
+
+  if (req.body.client.idNo !== "950619143366")
+    res
+      .status(200)
+      .json({ status: "FAILED", message: "Not found", req: req.body });
+
+  return res.status(200).json({
+    status: "SUCCESS",
+    data: {
+      content: [
+        {
+          clientId: "115001124",
+          clientName: "MAXILINK TC ELEVEN LA",
+          idType: "001",
+          idNo: "950619143366",
+          clientType: "003",
+          birthDate: "1995-06-19",
+          lifeSeqNo: "1",
+          gender: "F",
+          nationality: "MYS",
+          maritalStatus: "002",
+          race: "IND",
+          religion: "HIN",
+          educationLevel: "4",
+          monthlyIncome: 80000.0,
+          preferredLanguage: "ENG",
+          address: [
+            {
+              addressType: "RESIDENTIAL",
+              addressLine1: "WEQEWQ",
+              addressLine2: "EQWEQW",
+              addressLine4: "47110 SELANGOR",
+              state: "SELANGOR",
+              postal: "47110",
+              country: "MALAYSIA",
+              isPrimary: "Y",
+            },
+          ],
+          contact: [
+            {
+              contactType: "MOBILE",
+              countryCode: "60",
+              areaCode: "12",
+              contactNumber: "1234567",
+              isPrimary: "Y",
+            },
+          ],
+          email: [],
+        },
+        {
+          clientId: "115001124",
+          clientName: "MAXILINK TC ELEVEN LA",
+          idType: "001",
+          idNo: "950619143366",
+          clientType: "003",
+          birthDate: "1995-06-19",
+          lifeSeqNo: "1",
+          gender: "F",
+          nationality: "MYS",
+          maritalStatus: "002",
+          race: "IND",
+          religion: "HIN",
+          educationLevel: "4",
+          monthlyIncome: 80000.0,
+          preferredLanguage: "ENG",
+          address: [
+            {
+              addressType: "RESIDENTIAL",
+              addressLine1: "WEQEWQ",
+              addressLine2: "EQWEQW",
+              addressLine4: "47110 SELANGOR",
+              state: "SELANGOR",
+              postal: "47110",
+              country: "MALAYSIA",
+              isPrimary: "Y",
+            },
+          ],
+          contact: [
+            {
+              contactType: "MOBILE",
+              countryCode: "60",
+              areaCode: "12",
+              contactNumber: "1234567",
+              isPrimary: "Y",
+            },
+          ],
+          email: [],
+        },
+        {
+          clientId: "115001124",
+          clientName: "MAXILINK TC ELEVEN LA",
+          idType: "001",
+          idNo: "950619143366",
+          clientType: "003",
+          birthDate: "1995-06-19",
+          lifeSeqNo: "1",
+          gender: "F",
+          nationality: "MYS",
+          maritalStatus: "002",
+          race: "IND",
+          religion: "HIN",
+          educationLevel: "4",
+          monthlyIncome: 80000.0,
+          preferredLanguage: "ENG",
+          address: [
+            {
+              addressType: "RESIDENTIAL",
+              addressLine1: "WEQEWQ",
+              addressLine2: "EQWEQW",
+              addressLine4: "47110 SELANGOR",
+              state: "SELANGOR",
+              postal: "47110",
+              country: "MALAYSIA",
+              isPrimary: "Y",
+            },
+          ],
+          contact: [
+            {
+              contactType: "MOBILE",
+              countryCode: "60",
+              areaCode: "12",
+              contactNumber: "1234567",
+              isPrimary: "Y",
+            },
+          ],
+          email: [],
+        },
+      ],
+      pageable: {
+        pageNumber: 0,
+        pageSize: 20,
+        sort: {
+          empty: true,
+          unsorted: true,
+          sorted: false,
+        },
+        offset: 0,
+        unpaged: false,
+        paged: true,
+      },
+      size: 20,
+      number: 0,
+      sort: {
+        empty: true,
+        unsorted: true,
+        sorted: false,
+      },
+      first: true,
+      last: true,
+      numberOfElements: 3,
+      empty: false,
+    },
+    traceId: "cf3c7dbd-d96c-459a-8dac-bd8cec8425df",
+    timestamp: "2024-12-04T16:47:28.016+08:00",
+  });
+});
+
 app.post("/api/life/servicing/alteration/entry", (req, res) => {
-  console.log("REQUEST =>", req.body);
+  console.log("REQUEST => /api/life/servicing/alteration/entry", req.body);
 
   return res.status(200).json({
     status: "SUCCESS",
