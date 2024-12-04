@@ -7,6 +7,120 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.post(
+  "/cls-life-policy-svc/api/life/policies/policy-summary",
+  (req, res) => {
+    console.log(
+      "REQUEST => /cls-life-policy-svc/api/life/policies/policy-summary",
+      req.body
+    );
+
+    if (!req.body.appId || !req.body.client.idNo)
+      return res.status(200).json({ status: "FAILED", message: "Not found" });
+
+    if (req.body.client.idNo !== "950619143366")
+      res
+        .status(200)
+        .json({ status: "FAILED", message: "Not found", req: req.body });
+
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: {
+        content: [
+          {
+            policyNo: "BA2100001995",
+            entity: "ELIB",
+            checkDigit: 0,
+            proposalNo: "BA2100001995",
+            proposalCheckDigit: 2,
+            policyStatus: 12,
+            highRiskCustomer: "N",
+            policyCommencementDate: "2015-10-12T00:00:00.000+08:00",
+            clientName: "MAXILINK TC ELEVEN LA",
+            clientType: "003",
+            paymentMode: "012",
+            idType: "001",
+            idNo: "950619143366",
+            productName: "PremierLife Income",
+            agentCode: "3MB06545",
+            agentName: "MALAYAN BANKING BERHAD MATANG JAYA",
+            paymentSource: "001",
+            channelId: "3",
+            channelName: "BANCASSURANCE",
+          },
+          {
+            policyNo: "BA2100001996",
+            entity: "ELIB",
+            checkDigit: 1,
+            proposalNo: "BA2100001996",
+            proposalCheckDigit: 4,
+            policyStatus: 10,
+            highRiskCustomer: "N",
+            policyCommencementDate: "2015-07-13T00:00:00.000+08:00",
+            clientName: "MAXILINK TC ELEVEN LA",
+            clientType: "003",
+            paymentMode: "012",
+            idType: "001",
+            idNo: "950619143366",
+            productName: "PremierLife Income",
+            agentCode: "3MB06710",
+            agentName: "MALAYAN BANKING BERHAD DESA PARKCITY PWC",
+            paymentSource: "001",
+            channelId: "3",
+            channelName: "BANCASSURANCE",
+          },
+          {
+            policyNo: "CR0000054833",
+            entity: "ELIB",
+            checkDigit: 2,
+            proposalNo: "CR0000054833",
+            proposalCheckDigit: 1,
+            policyStatus: 9,
+            highRiskCustomer: "N",
+            policyCommencementDate: "2016-05-10T00:00:00.000+08:00",
+            clientName: "MAXILINK TC ELEVEN LA",
+            clientType: "003",
+            paymentMode: "012",
+            idType: "001",
+            idNo: "950619143366",
+            productName: "Twins Special II",
+            agentCode: "1EI00046",
+            agentName: "CHAN THAT SIONG",
+            paymentSource: "001",
+            channelId: "1",
+            channelName: "TIED AGENCY",
+          },
+        ],
+        pageable: {
+          pageNumber: 0,
+          pageSize: 20,
+          sort: {
+            empty: true,
+            unsorted: true,
+            sorted: false,
+          },
+          offset: 0,
+          unpaged: false,
+          paged: true,
+        },
+        size: 20,
+        number: 0,
+        sort: {
+          empty: true,
+          unsorted: true,
+          sorted: false,
+        },
+        first: true,
+        last: true,
+        numberOfElements: 3,
+        empty: false,
+      },
+      traceId: "48fb17ca-1078-47f2-9f56-cfabf550663b",
+      timestamp: "2024-12-04T13:23:24.775+08:00",
+    });
+  }
+);
+
 app.post("/cls-life-policy-svc/api/life/policies/client-detail", (req, res) => {
   console.log(
     "REQUEST => /cls-life-policy-svc/api/life/policies/client-detail",
