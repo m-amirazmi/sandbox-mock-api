@@ -127,163 +127,94 @@ app.post("/cls-life-policy-svc/api/life/policies/client-detail", (req, res) => {
     req.body
   );
 
-  if (!req.body.appId || !req.body.client.idNo)
+  if (!req.body.appId)
     return res.status(200).json({ status: "FAILED", message: "Not found" });
 
-  if (req.body.client.idNo !== "950619143366")
-    res
-      .status(200)
-      .json({ status: "FAILED", message: "Not found", req: req.body });
-
-  return res.status(200).json({
-    status: "SUCCESS",
-    data: {
-      content: [
-        {
-          clientId: "115001124",
-          clientName: "MAXILINK TC ELEVEN LA",
-          idType: "001",
-          idNo: "950619143366",
-          clientType: "003",
-          birthDate: "1995-06-19",
-          lifeSeqNo: "1",
-          gender: "F",
-          nationality: "MYS",
-          maritalStatus: "002",
-          race: "IND",
-          religion: "HIN",
-          educationLevel: "4",
-          monthlyIncome: 80000.0,
-          preferredLanguage: "ENG",
-          address: [
-            {
-              addressType: "RESIDENTIAL",
-              addressLine1: "WEQEWQ",
-              addressLine2: "EQWEQW",
-              addressLine4: "47110 SELANGOR",
-              state: "SELANGOR",
-              postal: "47110",
-              country: "MALAYSIA",
-              isPrimary: "Y",
-            },
-          ],
-          contact: [
-            {
-              contactType: "MOBILE",
-              countryCode: "60",
-              areaCode: "12",
-              contactNumber: "1234567",
-              isPrimary: "Y",
-            },
-          ],
-          email: [],
+  if (
+    req.body.client.idNo === "680907141968" ||
+    req.body.policy.policyNo === "BA9000001407"
+  )
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: {
+        content: [
+          {
+            clientId: "115838689",
+            clientName: "SLV NBUW",
+            idType: "001",
+            idNo: "680907141968",
+            clientType: "003",
+            birthDate: "1968-09-07",
+            lifeSeqNo: "1",
+            gender: "F",
+            nationality: "MYS",
+            maritalStatus: "002",
+            race: "MAL",
+            religion: "ISL",
+            monthlyIncome: 15000,
+            preferredLanguage: "MSA",
+            address: [
+              {
+                addressType: "RESIDENTIAL",
+                addressLine1: "13",
+                addressLine2: "BANGSAR",
+                addressLine3: "  KUALA LUMPUR",
+                addressLine4: "54400 WILAYAH PERSEKUTUAN (WP)",
+                city: "KUALA LUMPUR",
+                state: "WILAYAH PERSEKUTUAN (WP)",
+                postal: "54400",
+                country: "MALAYSIA",
+                isPrimary: "Y",
+              },
+            ],
+            contact: [
+              {
+                contactType: "MOBILE",
+                countryCode: "60",
+                areaCode: "012",
+                contactNumber: "3456789",
+                isPrimary: "Y",
+              },
+            ],
+            email: [
+              {
+                emailAddress: "etiqa.banca004@gmail.com",
+                isPrimary: "Y",
+              },
+            ],
+          },
+        ],
+        pageable: {
+          pageNumber: 0,
+          pageSize: 20,
+          sort: {
+            empty: true,
+            unsorted: true,
+            sorted: false,
+          },
+          offset: 0,
+          unpaged: false,
+          paged: true,
         },
-        {
-          clientId: "115001124",
-          clientName: "MAXILINK TC ELEVEN LA",
-          idType: "001",
-          idNo: "950619143366",
-          clientType: "003",
-          birthDate: "1995-06-19",
-          lifeSeqNo: "1",
-          gender: "F",
-          nationality: "MYS",
-          maritalStatus: "002",
-          race: "IND",
-          religion: "HIN",
-          educationLevel: "4",
-          monthlyIncome: 80000.0,
-          preferredLanguage: "ENG",
-          address: [
-            {
-              addressType: "RESIDENTIAL",
-              addressLine1: "WEQEWQ",
-              addressLine2: "EQWEQW",
-              addressLine4: "47110 SELANGOR",
-              state: "SELANGOR",
-              postal: "47110",
-              country: "MALAYSIA",
-              isPrimary: "Y",
-            },
-          ],
-          contact: [
-            {
-              contactType: "MOBILE",
-              countryCode: "60",
-              areaCode: "12",
-              contactNumber: "1234567",
-              isPrimary: "Y",
-            },
-          ],
-          email: [],
-        },
-        {
-          clientId: "115001124",
-          clientName: "MAXILINK TC ELEVEN LA",
-          idType: "001",
-          idNo: "950619143366",
-          clientType: "003",
-          birthDate: "1995-06-19",
-          lifeSeqNo: "1",
-          gender: "F",
-          nationality: "MYS",
-          maritalStatus: "002",
-          race: "IND",
-          religion: "HIN",
-          educationLevel: "4",
-          monthlyIncome: 80000.0,
-          preferredLanguage: "ENG",
-          address: [
-            {
-              addressType: "RESIDENTIAL",
-              addressLine1: "WEQEWQ",
-              addressLine2: "EQWEQW",
-              addressLine4: "47110 SELANGOR",
-              state: "SELANGOR",
-              postal: "47110",
-              country: "MALAYSIA",
-              isPrimary: "Y",
-            },
-          ],
-          contact: [
-            {
-              contactType: "MOBILE",
-              countryCode: "60",
-              areaCode: "12",
-              contactNumber: "1234567",
-              isPrimary: "Y",
-            },
-          ],
-          email: [],
-        },
-      ],
-      pageable: {
-        pageNumber: 0,
-        pageSize: 20,
+        size: 20,
+        number: 0,
         sort: {
           empty: true,
           unsorted: true,
           sorted: false,
         },
-        offset: 0,
-        unpaged: false,
-        paged: true,
+        first: true,
+        last: true,
+        numberOfElements: 1,
+        empty: false,
       },
-      size: 20,
-      number: 0,
-      sort: {
-        empty: true,
-        unsorted: true,
-        sorted: false,
-      },
-      first: true,
-      last: true,
-      numberOfElements: 3,
-      empty: false,
-    },
-    traceId: "cf3c7dbd-d96c-459a-8dac-bd8cec8425df",
-    timestamp: "2024-12-04T16:47:28.016+08:00",
-  });
+      traceId: "1cb70863-950a-492c-a39c-821bf6b67482",
+      timestamp: "2024-12-05T10:53:03.911+08:00",
+    });
+
+  res
+    .status(200)
+    .json({ status: "FAILED", message: "Not found", req: req.body });
 });
 
 app.post(
