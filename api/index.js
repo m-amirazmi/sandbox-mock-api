@@ -131,8 +131,12 @@ app.post("/cls-life-policy-svc/api/life/policies/client-detail", (req, res) => {
     return res.status(200).json({ status: "FAILED", message: "Not found" });
 
   if (
-    req.body.client.idNo === "680907141968" ||
-    req.body.policy.policyNo === "BA9000001407"
+    (req.body.client &&
+      req.body.client.idNo &&
+      req.body.client.idNo === "680907141968") ||
+    (req.body.policy &&
+      req.body.policy.policyNo &&
+      req.body.policy.policyNo === "BA9000001407")
   )
     return res.status(200).json({
       status: "SUCCESS",
