@@ -284,6 +284,27 @@ app.post(
   }
 );
 
+app.patch(
+  "/cls-life-servicing-svc/api/life/servicing/alteration/creation",
+  (req, res) => {
+    console.log(
+      "REQUEST => /cls-life-servicing-svc/api/life/servicing/alteration/creation",
+      req.body
+    );
+
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: [
+        { alterationStatus: 4, alterationNo: "NF000010229735" },
+        { alterationStatus: 4, alterationNo: "NF000010229736" },
+        { alterationStatus: 4, alterationNo: "NF000010229737" },
+      ],
+      traceId: "9c8d27aa-8bd8-4a7a-84c4-95cc827f1fd9",
+      timestamp: "2024-12-17T16:50:46.573+08:00",
+    });
+  }
+);
+
 const list = [
   {
     id: 26,
