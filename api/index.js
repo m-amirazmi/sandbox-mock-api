@@ -305,6 +305,207 @@ app.patch(
   }
 );
 
+app.post("/cls-life-policy-svc/api/life/policies/policy-detail", (req, res) => {
+  console.log(
+    "REQUEST => /cls-life-policy-svc/api/life/policies/policy-detail",
+    req.body
+  );
+
+  if (req.body.policy.policyNo === "BA90000013681")
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: {
+        content: [
+          {
+            policyNo: "BA9000001368",
+            checkDigit: 1,
+            policyCommencementDate: "2024-09-05T00:00:00.000+08:00",
+            policyIssueDate: "2024-09-05T00:00:00.000+08:00",
+            policyMaturityDate: "2048-09-04T00:00:00.000+08:00",
+            policyExpiryDate: "2048-09-04T00:00:00.000+08:00",
+            policyRiskCommencementDate: "2024-09-05T00:00:00.000+08:00",
+            policyStatus: 1,
+            policyStatusChangeDate: "2024-09-05T00:00:00.000+08:00",
+            clientName: "SLV NBUW",
+            totalSumAssured: 50000.0,
+            term: 24,
+            paymentMode: "null",
+            paymentSource: "2",
+            currency: "RM",
+            totalPremiumAmount: 203.73,
+            productName: "Smart Life Vantage",
+            entity: "ELIB",
+            isFamilyPlan: "N",
+            isMasterPolicy: "N",
+            agentCode: "3MB01244",
+          },
+        ],
+        pageable: {
+          pageNumber: 0,
+          pageSize: 20,
+          sort: { empty: true, unsorted: true, sorted: false },
+          offset: 0,
+          unpaged: false,
+          paged: true,
+        },
+        size: 20,
+        number: 0,
+        sort: { empty: true, unsorted: true, sorted: false },
+        first: true,
+        last: true,
+        numberOfElements: 1,
+        empty: false,
+      },
+      traceId: "5621e293-b717-4d55-b1fc-d1f6823d5bd6",
+      timestamp: "2024-12-18T10:57:22.267+08:00",
+    });
+  if (req.body.policy.policyNo === "BA90000013681")
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: {
+        content: [
+          {
+            policyNo: "BA9000001368",
+            checkDigit: 1,
+            policyCommencementDate: "2024-09-05T00:00:00.000+08:00",
+            policyIssueDate: "2024-09-05T00:00:00.000+08:00",
+            policyMaturityDate: "2048-09-04T00:00:00.000+08:00",
+            policyExpiryDate: "2048-09-04T00:00:00.000+08:00",
+            policyRiskCommencementDate: "2024-09-05T00:00:00.000+08:00",
+            policyStatus: 1,
+            policyStatusChangeDate: "2024-09-05T00:00:00.000+08:00",
+            clientName: "SLV NBUW",
+            totalSumAssured: 50000.0,
+            term: 24,
+            paymentMode: "null",
+            paymentSource: "2",
+            currency: "RM",
+            totalPremiumAmount: 203.73,
+            productName: "Smart Life Vantage",
+            entity: "ELIB",
+            isFamilyPlan: "N",
+            isMasterPolicy: "N",
+            agentCode: "3MB01244",
+          },
+        ],
+        pageable: {
+          pageNumber: 0,
+          pageSize: 20,
+          sort: { empty: true, unsorted: true, sorted: false },
+          offset: 0,
+          unpaged: false,
+          paged: true,
+        },
+        size: 20,
+        number: 0,
+        sort: { empty: true, unsorted: true, sorted: false },
+        first: true,
+        last: true,
+        numberOfElements: 1,
+        empty: false,
+      },
+      traceId: "5621e293-b717-4d55-b1fc-d1f6823d5bd6",
+      timestamp: "2024-12-18T10:57:22.267+08:00",
+    });
+  if (req.body.policy.policyNo === "BA90000013983")
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: {
+        content: [
+          {
+            policyNo: "BA9000001398",
+            checkDigit: 3,
+            policyCommencementDate: "2024-09-11T00:00:00.000+08:00",
+            policyIssueDate: "2024-09-11T00:00:00.000+08:00",
+            policyMaturityDate: "2047-09-10T00:00:00.000+08:00",
+            policyExpiryDate: "2047-09-10T00:00:00.000+08:00",
+            policyRiskCommencementDate: "2024-09-11T00:00:00.000+08:00",
+            policyStatus: 12,
+            policyStatusChangeDate: "2024-09-12T00:00:00.000+08:00",
+            clientName: "SLV NBUW",
+            totalSumAssured: 70000.0,
+            term: 23,
+            paymentMode: "null",
+            paymentSource: "2",
+            currency: "RM",
+            totalPremiumAmount: 294.79,
+            productName: "Smart Life Vantage",
+            entity: "ELIB",
+            isFamilyPlan: "N",
+            isMasterPolicy: "N",
+            agentCode: "3MB01244",
+          },
+        ],
+        pageable: {
+          pageNumber: 0,
+          pageSize: 20,
+          sort: { empty: true, unsorted: true, sorted: false },
+          offset: 0,
+          unpaged: false,
+          paged: true,
+        },
+        size: 20,
+        number: 0,
+        sort: { empty: true, unsorted: true, sorted: false },
+        first: true,
+        last: true,
+        numberOfElements: 1,
+        empty: false,
+      },
+      traceId: "e4ebcf70-822b-4c64-97bc-cd8eaf35dc05",
+      timestamp: "2024-12-18T10:59:34.218+08:00",
+    });
+  if (req.body.policy.policyNo === "BA90000014075")
+    return res.status(200).json({
+      status: "SUCCESS",
+      data: {
+        content: [
+          {
+            policyNo: "BA9000001407",
+            checkDigit: 5,
+            policyCommencementDate: "2024-09-13T00:00:00.000+08:00",
+            policyIssueDate: "2024-09-13T00:00:00.000+08:00",
+            policyMaturityDate: "2047-09-12T00:00:00.000+08:00",
+            policyExpiryDate: "2047-09-12T00:00:00.000+08:00",
+            policyRiskCommencementDate: "2024-09-13T00:00:00.000+08:00",
+            policyStatus: 1,
+            policyStatusChangeDate: "2024-09-13T00:00:00.000+08:00",
+            clientName: "SLV NBUW",
+            totalSumAssured: 50000.0,
+            term: 23,
+            paymentMode: "null",
+            paymentSource: "2",
+            currency: "RM",
+            totalPremiumAmount: 215.39,
+            productName: "Smart Life Vantage",
+            entity: "ELIB",
+            isFamilyPlan: "N",
+            isMasterPolicy: "N",
+            agentCode: "3MB01244",
+          },
+        ],
+        pageable: {
+          pageNumber: 0,
+          pageSize: 20,
+          sort: { empty: true, sorted: false, unsorted: true },
+          offset: 0,
+          paged: true,
+          unpaged: false,
+        },
+        size: 20,
+        number: 0,
+        sort: { empty: true, sorted: false, unsorted: true },
+        numberOfElements: 1,
+        first: true,
+        last: true,
+        empty: false,
+      },
+      traceId: "a890ed49-4b07-4ebd-a347-86f8707a65e4",
+      timestamp: "2024-12-18T11:00:51.330+08:00",
+    });
+  else return res.status(200).json({ message: "Not Found" });
+});
+
 const list = [
   {
     id: 26,
